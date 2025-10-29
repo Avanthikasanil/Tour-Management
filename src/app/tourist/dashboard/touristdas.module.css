@@ -1,0 +1,572 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ✅ Search + Filter Styling */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  gap: 0.4rem; 
+  background: rgba(230, 229, 229, 0.533); 
+  padding: 0.5rem; 
+  border-radius: 12px;
+}
+
+/* Search Input */
+.searchInput {
+  flex: 1; /* input takes full available space */
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 12px 0 0 12px;
+  background: #fff;
+}
+
+.searchInput:focus {
+  box-shadow: inset 0 0 0 2px #2575fc;
+}
+
+/* Search Button */
+.searchBtn {
+  flex: 0 0 auto; /* button takes only necessary space */
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 12px 12px 0;
+  transition: all 0.3s ease;
+}
+
+.searchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.searchImg {
+  width: 18px;
+  height: 18px;
+}
+
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #f34c23, #e68236);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.filterBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.filterImg {
+  width: 20px;
+  height: 20px;
+}
+
+.dashboardBody {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Popular Destinations */
+.popularSection {
+  text-align: center;
+  background-color: #c5ffc759;
+  padding-top: 30px;
+}
+
+.popularHeading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.popularGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.scrollWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+  animation: scrollX 30s linear infinite;
+  height: 350px;
+}
+
+/* Make wrapper relative so sidebar can be absolute */
+.filterWrapper {
+  position: relative;
+  display: inline-block; /* keeps it near the button */
+}
+
+/* Sidebar appears below the button */
+.filterSidebar {
+  position: absolute;
+  top: 110%; /* slightly below the button */
+  left: 0;
+  width: 300px; /* adjust as needed */
+  background: #150707;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  padding: 1rem;
+  z-index: 100; /* above everything else */
+}
+
+/* Optional: style sections inside sidebar */
+.filterSection {
+  margin-bottom: 1rem;
+}
+
+.destinationsList {
+  max-height: 200px; 
+  overflow-y: auto; /* scroll if many destinations */
+}
+
+.destinationItem, .categoryOptions div {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
+.viewMoreBtn {
+  background: #2575fc;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.applyFilterBtn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* move exactly half (since we duplicated items) */
+  }
+}
+
+.popularItem {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.popularItem img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.popularItem img:hover {
+  transform: scale(1.1);
+  border-color: #01050a;
+}
+
+.popularItem p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+/* Backdrop for closing filter on outside click */
+.filterBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 900;
+}
+
+/* Dropdown under Filter button */
+.filterDropdown {
+  position: absolute;
+  top: 70%; /* directly below button */
+  left: 60px;
+  background: #d2c9c9aa;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1000;
+  width: 330px;
+}
+
+/* Filter sections */
+.filterSection {
+  margin-bottom: 1rem;
+}
+
+/* Destinations without scroll */
+.destinationsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.destinationItem {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.destinationItem:hover {
+  background: #e0ffe0;
+}
+
+/* View More / View Less text */
+.viewMoreText {
+  color: green;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Category Options */
+.categoryOptions div {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  background: #f9f9f9;
+  transition: all 0.2s ease;
+}
+
+.categoryOptions div:hover {
+  background: #e0ffe0;
+}
+
+/* Apply Filter Button */
+.applyFilterBtn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.applyFilterBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.searchWrapper {
+  display: flex;
+  flex: 1; 
+  max-width: 800px; 
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  position: relative; /* important for autocomplete dropdown */
+  justify-content: center; /* centers the dropdown horizontally */
+  width: 100%;
+}
+
+
+/* Search button */
+.searchBtn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Autocomplete dropdown */
+.searchResults {
+  position: absolute;
+  top: 100%; /* directly below input */
+  left: 50%; /* center horizontally */
+  transform: translateX(-50%); /* adjust to center */
+  width: 400px; /* fixed width */
+  background: #fff; /* white background */
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual item in dropdown */
+.searchResultItem {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+  color: #01050a;
+}
+
+.searchResultItem:hover {
+  background: #f0f0f0;
+}
+
+/* ================================
+   ✅ RESPONSIVE DESIGN
+================================ */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .heroContent h1 {
+    font-size: 2.3rem;
+  }
+
+  .heroContent p {
+    font-size: 1.2rem;
+  }
+
+  .searchContainer {
+    width: 80%;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .searchWrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .filterBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchInput {
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  .searchBtn {
+    right: 10px;
+  }
+
+  .filterDropdown {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+  }
+
+  .scrollContent {
+    gap: 25px;
+    height: 280px;
+  }
+
+  .popularItem img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 80vh;
+  }
+
+  .heroContent {
+    top: 45%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .searchWrapper {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  .searchResults {
+    width: 90%;
+  }
+
+  .filterDropdown {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 1200;
+  }
+
+  .popularSection {
+    padding: 20px 0;
+  }
+
+  .popularHeading {
+    font-size: 24px;
+  }
+
+  .scrollContent {
+    gap: 15px;
+    height: 230px;
+  }
+
+  .popularItem img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .dashboardBody {
+    padding: 1rem;
+  }
+}
+
+/* Small mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.6rem;
+  }
+
+  .heroContent p {
+    font-size: 0.9rem;
+  }
+
+  .searchContainer {
+    gap: 0.5rem;
+    width: 95%;
+  }
+
+  .filterBtn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .searchInput {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .popularHeading {
+    font-size: 22px;
+  }
+
+  .popularItem img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .filterDropdown {
+    top: 15%;
+    width: 95%;
+  }
+
+  .applyFilterBtn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}

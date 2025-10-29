@@ -1,0 +1,107 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f0f8fb;
+  padding: 40px 20px;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* spacing between progress and card */
+}
+
+
+.card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(13, 106, 13);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fafafa;
+  transition: all 0.2s ease-in-out;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #00b4d8;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 216, 54, 0.3);
+}
+
+.formGroup textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.proceedBtn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #00d836, #17830e);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.proceedBtn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #0096c7, #005f8d);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}

@@ -1,0 +1,56 @@
+.adminLayout {
+  display: flex;
+  background: #f6f8fb;
+}
+
+.mainContent {
+  margin-left: 250px;
+  padding: 20px 40px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  background-color: rgb(207, 247, 207);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h4 {
+  color: #555;
+}
+
+.card p {
+  color: #00b894;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.chartBox {
+  background: white;
+  border-radius: 12px;
+  margin-top: 40px;
+  padding: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  max-width: 400pc;
+}
+
+.chartContainer {
+  width: 300px;
+  margin: 0 auto;
+}

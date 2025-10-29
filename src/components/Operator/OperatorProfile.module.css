@@ -1,0 +1,122 @@
+/* Drawer overlay */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+/* Drawer content */
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drawerContent h2{
+  padding-top: 10px;
+}
+
+/* Close icon */
+.closeIcon {
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Profile picture wrapper */
+.picWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profilePic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Edit button under picture */
+.editBtnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.editBtnWrapper button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.editBtnWrapper button:hover {
+  background-color: #45a049;
+}
+
+/* Input fields scoped with a local class */
+.inputField {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Save button */
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btnGroup button {
+  background-color: #2196F3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btnGroup button:hover {
+  background-color: #1976d2;
+}
+
+/* Paragraphs for read-only view */
+.pField {
+  margin: 5px 0;
+}
+
+/* OperatorProfile.module.css or TouristProfile.module.css */
+.error {
+  color: red;
+  font-size: 0.875rem; /* optional: smaller text */
+  margin: 4px 0 8px 0; /* spacing between input and error */
+}
+
+
+

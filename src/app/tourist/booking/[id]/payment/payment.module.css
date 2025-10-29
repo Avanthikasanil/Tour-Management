@@ -1,0 +1,109 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #59aed31f;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.optionBlock {
+  margin-bottom: 20px;
+}
+
+.option {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.option:hover {
+  background: #f0f0f0;
+}
+
+.option img {
+  width: 28px;
+  height: auto;
+}
+
+.active {
+  border-color: #0070f3;
+  background: #e6f0ff;
+}
+
+.cardForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.proceed {
+  width: 100%;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.proceed:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #0096c7, #005f8d);
+}
+
+.all {
+  display: block;
+  margin: 20px auto 0;
+  height: 8rem;
+  width: 16rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}

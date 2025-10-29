@@ -1,0 +1,267 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(189 211 190 / 53%);         
+  padding: 12px 100px;           
+  height: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+  z-index: 1000;
+   margin: 20px;
+}
+
+.logo img {
+  height: 10rem;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.profileBtn{
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+
+.navList li a,
+.navList li button {
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navList li a:hover,
+.navList li button:hover {
+  color: #0a550a; /* dark green text on hover */
+}
+.rightButtons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.bookingBtn {
+  padding: 8px 15px;
+  background-color: #00aaff; /* blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.bookingBtn:hover {
+  background-color: #0077cc;
+}
+
+.logoutBtn {
+  padding: 8px 15px;
+  background-color: #ff4d4d; /* red button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.logoutBtn:hover {
+  background-color: #cc0000;
+}
+
+.logoutBtn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logoutBtn:hover {
+  background: #c62828;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  height: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.actions {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancel {
+  background: #ccc;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background: #aaa;
+}
+
+.confirm {
+  background: #e63946;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm:hover {
+  background: #c62828;
+}
+.wishlistBtn {
+  color: green;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.profileImageBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #cac9d2;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+  border-color: #000307;
+}
+
+/* ✅ Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  z-index: 1200;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: green;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Navbar adjustments for smaller screens */
+  .navbar {
+    position: relative;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  /* ✅ Overlay background when menu is open */
+  .navOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+  }
+
+  .navList {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    max-width: 300px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px 30px;
+    gap: 25px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .navListActive {
+    transform: translateX(0);
+  }
+
+  .navList li a {
+    font-size: 18px;
+    color: green;
+    font-weight: 500;
+  }
+
+  /* Hide right buttons on mobile */
+  .rightButtons {
+    display: none;
+  }
+}

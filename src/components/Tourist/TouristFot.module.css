@@ -1,0 +1,68 @@
+.footer {
+  background: rgb(189 211 190 / 53%);
+  padding: 40px 20px 20px;
+  border-top: 1px solid #ddd;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.section p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  margin-bottom: 6px;
+}
+
+.section ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.social a {
+  font-size: 20px;
+  text-decoration: none;
+}
+.social img{
+    width: 50px;
+    height: 50px;
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #ddd;
+}

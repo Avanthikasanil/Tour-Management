@@ -1,0 +1,185 @@
+.container {
+  padding: 60px 40px;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background: url('https://i.pinimg.com/736x/42/9d/6b/429d6bf14dd1a397e86696fc8b11f53f.jpg') center/cover;
+  opacity: .5;
+  pointer-events: none;
+}
+
+.heading {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #5d5d5d;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+}
+
+.heading::before {
+  content: '"Collect moments, not things"';
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #8b8b8b;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #ffb6b9, #ffc8dd, #a8dadc);
+  margin: 1.5rem auto 3rem;
+  border-radius: 10px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 100 auto;
+}
+
+.emptyState {
+  text-align: center;
+  color: #7b7b7b;
+  font-size: 1.1rem;
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  border: 2px dashed #d4a5a5;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.8;
+}
+
+.emptyState::before {
+  content: '✨';
+  display: block;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 0.8;
+  }
+}
+
+.emptyState::after {
+  content: '"Your journey begins with a single wish"';
+  display: block;
+  font-style: italic;
+  color: #a88c8c;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* Decorative elements */
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 200, 221, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 20px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .heading::before {
+    font-size: 0.9rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .emptyState {
+    font-size: 1rem;
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .container {
+    padding: 40px 15px;
+  }
+
+  .emptyState::before {
+    font-size: 3rem;
+  }
+}
+
+/* Loading state */
+.heading:only-child {
+  margin-top: 8rem;
+  color: #a8a8a8;
+}
+
+/* Card hover enhancement */
+.cardGrid > * {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cardGrid > *:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 182, 185, 0.3);
+}

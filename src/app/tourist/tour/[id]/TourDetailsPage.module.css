@@ -1,0 +1,105 @@
+.tourContainer {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 60pc;
+  margin: 20px auto;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tourHeading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.tourInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detailSection {
+  margin-bottom: 15px;
+}
+
+.mainHeading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.subItem {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-left: 15px;
+  color: #444;
+}
+
+.list {
+  padding-left: 20px;
+  margin: 5px 0 10px 0;
+  list-style-type: disc;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.buttonContainer button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+}
+
+.closeBtn { background-color: #007bff; }
+.wishlistBtn { background-color: #e91010; }
+.bookBtn { background-color: #028f10; }
+
+.imageSlider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 20px;
+}
+
+.sliderMainImage {
+  width: 100%;
+  max-height: 650px;
+  border-radius: 7px;
+}
+
+.prevBtn, .nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(37, 40, 37, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prevBtn { left: 10px; }
+.nextBtn { right: 10px; }
+.available {
+  color: green;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.notAvailable {
+  color: red;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

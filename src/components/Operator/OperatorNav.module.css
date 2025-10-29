@@ -1,0 +1,110 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eaeeed;         
+  padding: 12px 100px;           
+  height: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+  z-index: 1000;
+   margin: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+     height: 10rem;
+  width: auto;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 40rem;
+}
+
+.navList li a {
+  color: rgb(9, 85, 9);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navList li button {
+  color: rgb(9, 85, 9);
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+
+.navList li a:hover {
+  text-decoration: underline;
+}
+
+.logoutBtn {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: #e60000;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(9, 85, 9);
+  border-radius: 2px;
+}
+
+
+@media (max-width: 1024px) { /* tablet and smaller */
+  .hamburger {
+    display: flex;
+  }
+
+  .navList {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #eaeeed;
+    padding: 10px 0;
+    gap: 10px;
+    display: none; /* hide by default */
+  }
+
+  .navList.active {
+    display: flex; /* show when hamburger clicked */
+  }
+
+  .navList li a,
+  .navList li button {
+    padding: 10px 20px;
+  }
+
+  .logoutBtn {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    display: block;
+  }
+}

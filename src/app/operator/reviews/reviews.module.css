@@ -1,0 +1,111 @@
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reviewList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.reviewCard {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.reviewCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.reviewCard p {
+  margin: 5px 0;
+  color: #374151;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.reviewCard strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.reviewCard small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.container > p {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* ⭐ Responsive Styling */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .reviewCard {
+    padding: 15px;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .reviewCard h3 {
+    font-size: 1rem;
+  }
+
+  .reviewCard p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewList {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .reviewCard {
+    padding: 12px;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,69 @@
+.progressContainer {
+  display: flex;
+  justify-content: center;  /* center the whole bar */
+  align-items: center;
+  width: 100%;              
+  max-width: 800px;         
+  margin: 20px auto;        
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #555;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+   color: #fff;
+  border: 3px solid #bbf7d0;
+  box-shadow: rgb(124, 179, 206);
+}
+
+.completed {
+  background: linear-gradient(135deg, #06a5d6, #1b9aaa);
+  color: #fff;
+}
+
+.label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #455c89;
+  text-align: center;
+}
+
+.activeLabel {
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.line {
+  position: absolute;
+  top: 19px; /* aligns with circle center */
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  z-index: 1;
+}
+
+.completedLine {
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+}

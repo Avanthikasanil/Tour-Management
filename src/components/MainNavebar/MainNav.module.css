@@ -1,0 +1,137 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8ffea;
+  padding: 12px 100px;
+  height: 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  margin: 20px;
+}
+
+/* Logo */
+.logo img {
+  height: 10rem;
+  width: auto;
+}
+
+/* Right section */
+.rightSection {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0 15px;
+}
+
+.navLinks li a {
+  color: rgb(22, 130, 53);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: raleway-v2, sans-serif;
+  font-size: 17px;
+}
+
+.navLinks li a:hover {
+  color: #d5895a;
+}
+
+/* Buttons */
+.buttons {
+  margin-left: 20px;
+}
+
+.buttons button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register {
+  background: green;
+  color: white;
+}
+
+.login {
+  background: blue;
+  color: white;
+}
+
+/* ✅ Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #168235;
+}
+
+/* ✅ Responsive Media Queries */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .rightSection {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 100%;
+    background: #f8ffea;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .rightSection.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLinks {
+    flex-direction: column;
+  }
+
+  .navLinks li {
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 120px;
+  }
+}

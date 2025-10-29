@@ -1,0 +1,143 @@
+/* Drawer container */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Hidden by default */
+  width: 360px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: right 0.3s ease;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+/* Drawer content */
+.drawerContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Close icon */
+.closeIcon {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.closeIcon:hover {
+  color: #e63946;
+}
+
+/* Heading */
+.drawerContent h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Profile picture */
+.picWrapper {
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.profilePic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+.drawerContent label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+/* Inputs */
+.drawerContent input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drawerContent input:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 4px rgba(0, 119, 182, 0.2);
+}
+
+
+
+.btnGroup button {
+  background: rgb(17, 120, 17);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btnGroup button:hover {
+  background: #023e8a;
+}
+
+.editBtnWrapper {
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.editBtnWrapper button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.editBtnWrapper button:hover {
+  background: #023e8a;
+}
+
+.btnGroup {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem; /* optional: smaller text */
+  margin: 4px 0 8px 0; /* spacing between input and error */
+}
+
