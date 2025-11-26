@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -18,7 +18,7 @@ interface Tour {
   description?: string;
 }
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const tourId = searchParams.get('tourId');
@@ -26,7 +26,7 @@ export default function CheckoutPage() {
   const [tour, setTour] = useState<Tour | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // 1️⃣ Fetch tour details
+  // Fetch tour details
   useEffect(() => {
     if (!tourId) return;
 
@@ -37,7 +37,7 @@ export default function CheckoutPage() {
       .finally(() => setLoading(false));
   }, [tourId]);
 
-  // 2️⃣ Create Stripe PaymentIntent (after tour is loaded)
+  // Create Stripe PaymentIntent
   useEffect(() => {
     if (!tour) return;
 
@@ -172,5 +172,14 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Wrap the client content in Suspense to fix prerender error
+export default function CheckoutPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <CheckoutContent />
+    </Suspense>
   );
 }
